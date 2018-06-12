@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		2813B89320CE6CB10027667B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2813B89220CE6CB10027667B /* AppDelegate.m */; };
 		2813B89620CE6CB10027667B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2813B89520CE6CB10027667B /* ViewController.m */; };
-		2813B89920CE6CB10027667B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2813B89720CE6CB10027667B /* Main.storyboard */; };
 		2813B89B20CE6CB30027667B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2813B89A20CE6CB30027667B /* Assets.xcassets */; };
 		2813B89E20CE6CB30027667B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2813B89C20CE6CB30027667B /* LaunchScreen.storyboard */; };
 		2813B8A120CE6CB30027667B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2813B8A020CE6CB30027667B /* main.m */; };
+		2813B8A920CE6E090027667B /* DYY_AlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2813B8A820CE6E090027667B /* DYY_AlertTool.m */; };
+		A6D3F779FDC40637EC99F46D /* libPods-pop动画.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA08FA07865ED6E1CEBA2875 /* libPods-pop动画.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +22,15 @@
 		2813B89220CE6CB10027667B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2813B89420CE6CB10027667B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2813B89520CE6CB10027667B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2813B89820CE6CB10027667B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2813B89A20CE6CB30027667B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2813B89D20CE6CB30027667B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2813B89F20CE6CB30027667B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2813B8A020CE6CB30027667B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2813B8A720CE6E090027667B /* DYY_AlertTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYY_AlertTool.h; sourceTree = "<group>"; };
+		2813B8A820CE6E090027667B /* DYY_AlertTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYY_AlertTool.m; sourceTree = "<group>"; };
+		BA08FA07865ED6E1CEBA2875 /* libPods-pop动画.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pop动画.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D08C8AD690DBAE90BF9E69C1 /* Pods-pop动画.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pop动画.release.xcconfig"; path = "Pods/Target Support Files/Pods-pop动画/Pods-pop动画.release.xcconfig"; sourceTree = "<group>"; };
+		D91DC2692AF93ABD7EF2ACAA /* Pods-pop动画.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pop动画.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pop动画/Pods-pop动画.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6D3F779FDC40637EC99F46D /* libPods-pop动画.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +50,8 @@
 			children = (
 				2813B89020CE6CB10027667B /* pop动画 */,
 				2813B88F20CE6CB10027667B /* Products */,
+				F1B2C853C8C76A551432F285 /* Pods */,
+				DF101685BD03CEEFE152FE9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,13 +70,31 @@
 				2813B89220CE6CB10027667B /* AppDelegate.m */,
 				2813B89420CE6CB10027667B /* ViewController.h */,
 				2813B89520CE6CB10027667B /* ViewController.m */,
-				2813B89720CE6CB10027667B /* Main.storyboard */,
+				2813B8A720CE6E090027667B /* DYY_AlertTool.h */,
+				2813B8A820CE6E090027667B /* DYY_AlertTool.m */,
 				2813B89A20CE6CB30027667B /* Assets.xcassets */,
 				2813B89C20CE6CB30027667B /* LaunchScreen.storyboard */,
 				2813B89F20CE6CB30027667B /* Info.plist */,
 				2813B8A020CE6CB30027667B /* main.m */,
 			);
 			path = "pop动画";
+			sourceTree = "<group>";
+		};
+		DF101685BD03CEEFE152FE9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA08FA07865ED6E1CEBA2875 /* libPods-pop动画.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1B2C853C8C76A551432F285 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D91DC2692AF93ABD7EF2ACAA /* Pods-pop动画.debug.xcconfig */,
+				D08C8AD690DBAE90BF9E69C1 /* Pods-pop动画.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +104,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2813B8A420CE6CB30027667B /* Build configuration list for PBXNativeTarget "pop动画" */;
 			buildPhases = (
+				24A82811E686756B7C43E061 /* [CP] Check Pods Manifest.lock */,
 				2813B88A20CE6CB10027667B /* Sources */,
 				2813B88B20CE6CB10027667B /* Frameworks */,
 				2813B88C20CE6CB10027667B /* Resources */,
@@ -130,11 +157,31 @@
 			files = (
 				2813B89E20CE6CB30027667B /* LaunchScreen.storyboard in Resources */,
 				2813B89B20CE6CB30027667B /* Assets.xcassets in Resources */,
-				2813B89920CE6CB10027667B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24A82811E686756B7C43E061 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pop动画-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2813B88A20CE6CB10027667B /* Sources */ = {
@@ -142,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2813B89620CE6CB10027667B /* ViewController.m in Sources */,
+				2813B8A920CE6E090027667B /* DYY_AlertTool.m in Sources */,
 				2813B8A120CE6CB30027667B /* main.m in Sources */,
 				2813B89320CE6CB10027667B /* AppDelegate.m in Sources */,
 			);
@@ -150,14 +198,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2813B89720CE6CB10027667B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2813B89820CE6CB10027667B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2813B89C20CE6CB30027667B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -281,11 +321,13 @@
 		};
 		2813B8A520CE6CB30027667B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D91DC2692AF93ABD7EF2ACAA /* Pods-pop动画.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3284H893FZ;
 				INFOPLIST_FILE = "pop动画/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,11 +340,13 @@
 		};
 		2813B8A620CE6CB30027667B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D08C8AD690DBAE90BF9E69C1 /* Pods-pop动画.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3284H893FZ;
 				INFOPLIST_FILE = "pop动画/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
