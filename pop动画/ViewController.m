@@ -43,7 +43,7 @@
 - (void)dismisssss
 {
 //    [[DYY_AlertTool shared] dismissToBottom];
-    [[DYY_AlertTool shared] dismissToRight];
+    [[DYY_AlertTool shared] dismissToBottom];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

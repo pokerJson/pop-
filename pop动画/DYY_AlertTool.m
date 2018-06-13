@@ -139,39 +139,48 @@
 }
 - (void)dismissToBottom
 {
+//    weakObj(self);
+//    POPSpringAnimation *springAn = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+//    springAn.springBounciness = 18;
+//    springAn.springSpeed = 12;
+//    springAn.toValue = @(kScreenHeight/2-60);
+//    springAn.completionBlock = ^(POPAnimation *anim, BOOL finished) {
+//        POPBasicAnimation *anmationY = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+//        anmationY.beginTime = CACurrentMediaTime();
+//        anmationY.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//        anmationY.duration = 0.3;
+//        anmationY.fromValue = @(kScreenHeight/2-60);
+//        anmationY.toValue = @(kScreenHeight+self.contentView.frame.size.height);
+//        [self.contentView.layer pop_addAnimation:anmationY forKey:@"anmationY"];
+//        anmationY.completionBlock = ^(POPAnimation *anim, BOOL finished) {
+//            [selfWeak dismiss];
+//        };
+//    };
+//    [self.contentView.layer pop_addAnimation:springAn forKey:@"springAn"];
+    
+    //默认是0.4秒的动画 左右抖动
+    POPSpringAnimation *spin = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerRotation];
+    spin.springBounciness = 20;
+    spin.springSpeed = 1;
+    spin.fromValue = @(0.2);
+    spin.fromValue = @(-0.2);
+    [self.contentView.layer pop_addAnimation:spin forKey:@"spim"];
+    
     weakObj(self);
-    POPSpringAnimation *springAn = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-    springAn.springBounciness = 18;
-    springAn.springSpeed = 12;
-    springAn.toValue = @(kScreenHeight/2-60);
-    springAn.completionBlock = ^(POPAnimation *anim, BOOL finished) {
-        POPBasicAnimation *anmationY = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-        anmationY.beginTime = CACurrentMediaTime();
-        anmationY.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-        anmationY.duration = 0.3;
-        anmationY.fromValue = @(kScreenHeight/2-60);
-        anmationY.toValue = @(kScreenHeight+self.contentView.frame.size.height);
-        [self.contentView.layer pop_addAnimation:anmationY forKey:@"anmationY"];
-        anmationY.completionBlock = ^(POPAnimation *anim, BOOL finished) {
-            [selfWeak dismiss];
-        };
+    POPBasicAnimation *anmationY = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    anmationY.beginTime = CACurrentMediaTime();
+    anmationY.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    anmationY.duration = 0.3;
+    anmationY.beginTime = CACurrentMediaTime()+0.4;//这里延迟0.4秒执行 就是等上一个动画完成再执行  也可以用上一个动画的block里面执行就不用延迟0.4秒了
+    anmationY.fromValue = @(kScreenHeight/2);
+    anmationY.toValue = @(kScreenHeight+self.contentView.frame.size.height);
+    [self.contentView.layer pop_addAnimation:anmationY forKey:@"anmationY"];
+    anmationY.completionBlock = ^(POPAnimation *anim, BOOL finished) {
+        [selfWeak.contentView removeFromSuperview];
+        [selfWeak dismiss];
     };
-    [self.contentView.layer pop_addAnimation:springAn forKey:@"springAn"];
-//    POPSpringAnimation *anmationY = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-//    anmationY.beginTime = CACurrentMediaTime();
-//    anmationY.springBounciness = 20;
-//    anmationY.springSpeed = 20;
-//    anmationY.fromValue = @(kScreenHeight/2-30);
-//    anmationY.toValue = @(kScreenHeight/2);;
-//    [self.contentView.layer pop_addAnimation:anmationY forKey:@"anmationY"];
-//
-//    POPBasicAnimation *basci = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-//    basci.beginTime = CACurrentMediaTime();
-//    basci.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-//    basci.duration = 0.6;
-//    basci.fromValue = @(kScreenHeight/2-30);
-//    basci.toValue = @(kScreenHeight+self.contentView.frame.size.height);
-//    [self.contentView.layer pop_addAnimation:basci forKey:@"basci"];
+    [self.contentView.layer pop_addAnimation:anmationY forKey:@"sss"];
+
 }
 - (void)dismissToCenter
 {
