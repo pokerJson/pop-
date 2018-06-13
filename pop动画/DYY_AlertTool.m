@@ -50,7 +50,9 @@
     }else if (style == DYYAlertStyleFromLeft)
     {
         [self showFromLeft];
-
+    }else if (style == DYYAlertStyleFromBottom)
+    {
+        [self showFromBottom];
     }
 }
 - (void)showFromTop
@@ -137,8 +139,59 @@
     [KEYWINDOW addSubview:self.contentView];
 
 }
+- (void)showFromBottom
+{
+    //效果1.
+//    POPSpringAnimation *fromBottomSp = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+//    fromBottomSp.springSpeed = 12;
+//    fromBottomSp.springBounciness = 20;
+//    fromBottomSp.fromValue = @(kScreenHeight);
+//    fromBottomSp.toValue = @(kScreenHeight/2);
+//    [self.contentView.layer pop_addAnimation:fromBottomSp forKey:@"frombottom"];
+    
+    //效果2.
+//    POPBasicAnimation *fromB = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+//    fromB.duration = 0.2;
+//    fromB.fromValue = @(kScreenHeight);
+//    fromB.toValue = @(kScreenHeight/2);
+//    [self.contentView.layer pop_addAnimation:fromB forKey:@"fromB"];
+//    POPSpringAnimation *doud = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerRotation];
+//    doud.beginTime = CACurrentMediaTime()+0.2;
+//    doud.springSpeed = 15;
+//    doud.springBounciness = 20;
+//    doud.fromValue = @(0.1);
+//    doud.toValue = @(-0.1);
+//    [self.contentView.layer pop_addAnimation:doud forKey:@"doud"];
+//    POPSpringAnimation *doud2 = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerRotation];
+//    doud2.beginTime = CACurrentMediaTime()+0.7;
+//    doud2.springSpeed = 15;
+//    doud2.springBounciness = 20;
+//    doud2.fromValue = @(-0.1);
+//    doud2.toValue = @(0);
+//    [self.contentView.layer pop_addAnimation:doud2 forKey:@"doud2"];
+
+    //3.
+    POPSpringAnimation *fromBottomSp = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    fromBottomSp.springSpeed = 12;
+    fromBottomSp.springBounciness = 20;
+    fromBottomSp.fromValue = @(kScreenHeight);
+    fromBottomSp.toValue = @(kScreenHeight/2);
+    [self.contentView.layer pop_addAnimation:fromBottomSp forKey:@"frombottom"];
+    
+    POPSpringAnimation *scale2 = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+    scale2.springSpeed = 12;
+    scale2.springBounciness = 20;
+    scale2.fromValue = [NSValue valueWithCGPoint:CGPointMake(0.0, 0.0)];
+    scale2.toValue = [NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)];
+    [self.contentView.layer pop_addAnimation:scale2 forKey:@"scale2"];
+
+    
+    [KEYWINDOW addSubview:self.contentView];
+
+}
 - (void)dismissToBottom
 {
+    //1.
 //    weakObj(self);
 //    POPSpringAnimation *springAn = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
 //    springAn.springBounciness = 18;
@@ -158,7 +211,33 @@
 //    };
 //    [self.contentView.layer pop_addAnimation:springAn forKey:@"springAn"];
     
+    
+    //2.
     //默认是0.4秒的动画 左右抖动
+//    POPSpringAnimation *spin = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerRotation];
+//    spin.springBounciness = 20;
+//    spin.springSpeed = 1;
+//    spin.fromValue = @(0.2);
+//    spin.fromValue = @(-0.2);
+//    [self.contentView.layer pop_addAnimation:spin forKey:@"spim"];
+//
+//    weakObj(self);
+//    POPBasicAnimation *anmationY = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+//    anmationY.beginTime = CACurrentMediaTime();
+//    anmationY.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//    anmationY.duration = 0.3;
+//    anmationY.beginTime = CACurrentMediaTime()+0.4;//这里延迟0.4秒执行 就是等上一个动画完成再执行  也可以用上一个动画的block里面执行就不用延迟0.4秒了
+//    anmationY.fromValue = @(kScreenHeight/2);
+//    anmationY.toValue = @(kScreenHeight+self.contentView.frame.size.height);
+//    [self.contentView.layer pop_addAnimation:anmationY forKey:@"anmationY"];
+//    anmationY.completionBlock = ^(POPAnimation *anim, BOOL finished) {
+//        [selfWeak.contentView removeFromSuperview];
+//        [selfWeak dismiss];
+//    };
+//    [self.contentView.layer pop_addAnimation:anmationY forKey:@"sss"];
+
+    
+    //效果3. 可以喝DYYAlertStyleFromTop 这个效果相对应
     POPSpringAnimation *spin = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerRotation];
     spin.springBounciness = 20;
     spin.springSpeed = 1;
@@ -170,8 +249,7 @@
     POPBasicAnimation *anmationY = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
     anmationY.beginTime = CACurrentMediaTime();
     anmationY.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    anmationY.duration = 0.3;
-    anmationY.beginTime = CACurrentMediaTime()+0.4;//这里延迟0.4秒执行 就是等上一个动画完成再执行  也可以用上一个动画的block里面执行就不用延迟0.4秒了
+    anmationY.duration = 0.4;
     anmationY.fromValue = @(kScreenHeight/2);
     anmationY.toValue = @(kScreenHeight+self.contentView.frame.size.height);
     [self.contentView.layer pop_addAnimation:anmationY forKey:@"anmationY"];

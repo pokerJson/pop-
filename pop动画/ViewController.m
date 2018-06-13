@@ -36,7 +36,7 @@
     [bu setTitle:@"dissmiss" forState:UIControlStateNormal];
     [bu addTarget:self action:@selector(dismisssss) forControlEvents:UIControlEventTouchUpInside];
     [viviv addSubview:bu];
-    [[DYY_AlertTool shared] show:viviv withType:DYYAlertStyleFromCenter];
+    [[DYY_AlertTool shared] show:viviv withType:DYYAlertStyleFromBottom];
     
 
 }
