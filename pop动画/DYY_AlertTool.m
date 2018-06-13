@@ -141,7 +141,7 @@
 }
 - (void)showFromBottom
 {
-    //效果1.
+//    //效果1.
 //    POPSpringAnimation *fromBottomSp = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
 //    fromBottomSp.springSpeed = 12;
 //    fromBottomSp.springBounciness = 20;
@@ -149,7 +149,7 @@
 //    fromBottomSp.toValue = @(kScreenHeight/2);
 //    [self.contentView.layer pop_addAnimation:fromBottomSp forKey:@"frombottom"];
     
-    //效果2.
+//    //效果2.
 //    POPBasicAnimation *fromB = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
 //    fromB.duration = 0.2;
 //    fromB.fromValue = @(kScreenHeight);
@@ -170,20 +170,49 @@
 //    doud2.toValue = @(0);
 //    [self.contentView.layer pop_addAnimation:doud2 forKey:@"doud2"];
 
-    //3.
-    POPSpringAnimation *fromBottomSp = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-    fromBottomSp.springSpeed = 12;
-    fromBottomSp.springBounciness = 20;
-    fromBottomSp.fromValue = @(kScreenHeight);
-    fromBottomSp.toValue = @(kScreenHeight/2);
-    [self.contentView.layer pop_addAnimation:fromBottomSp forKey:@"frombottom"];
+//    //3.
+//    POPSpringAnimation *fromBottomSp = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+//    fromBottomSp.springSpeed = 12;
+//    fromBottomSp.springBounciness = 20;
+//    fromBottomSp.fromValue = @(kScreenHeight);
+//    fromBottomSp.toValue = @(kScreenHeight/2);
+//    [self.contentView.layer pop_addAnimation:fromBottomSp forKey:@"frombottom"];
+//
+//    POPSpringAnimation *scale2 = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+//    scale2.springSpeed = 12;
+//    scale2.springBounciness = 20;
+//    scale2.fromValue = [NSValue valueWithCGPoint:CGPointMake(0.0, 0.0)];
+//    scale2.toValue = [NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)];
+//    [self.contentView.layer pop_addAnimation:scale2 forKey:@"scale2"];
+
+//    //效果4
+    POPSpringAnimation *fromBottomSp2 = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    fromBottomSp2.springSpeed = 12;
+    fromBottomSp2.springBounciness = 20;
+    fromBottomSp2.fromValue = @(kScreenHeight);
+    fromBottomSp2.toValue = @(kScreenHeight/2);
+    [self.contentView.layer pop_addAnimation:fromBottomSp2 forKey:@"frombottom2"];
+
+    POPSpringAnimation *rotationAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerRotation];
+    rotationAnimation.beginTime = CACurrentMediaTime() + 0.2;
+    rotationAnimation.toValue = @(0.11);
+    rotationAnimation.springBounciness = 10.f;
+    rotationAnimation.springSpeed = 3;
+    [self.contentView.layer pop_addAnimation:rotationAnimation forKey:@"rotationAnim"];
+    POPSpringAnimation *rotationAnimation2 = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerRotation];
+    rotationAnimation2.beginTime = CACurrentMediaTime() + 0.4;
+    rotationAnimation2.toValue = @(-0.11);
+    rotationAnimation2.springBounciness = 10.f;
+    rotationAnimation2.springSpeed = 3;
+    [self.contentView.layer pop_addAnimation:rotationAnimation2 forKey:@"rotationAnim2"];
+    POPSpringAnimation *rotationAnimation22 = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerRotation];
+    rotationAnimation22.beginTime = CACurrentMediaTime() + 0.8;
+    rotationAnimation22.toValue = @(0);
+    rotationAnimation22.springBounciness = 10.f;
+    rotationAnimation22.springSpeed = 3;
+    [self.contentView.layer pop_addAnimation:rotationAnimation22 forKey:@"rotationAnim22"];
+
     
-    POPSpringAnimation *scale2 = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
-    scale2.springSpeed = 12;
-    scale2.springBounciness = 20;
-    scale2.fromValue = [NSValue valueWithCGPoint:CGPointMake(0.0, 0.0)];
-    scale2.toValue = [NSValue valueWithCGPoint:CGPointMake(1.0, 1.0)];
-    [self.contentView.layer pop_addAnimation:scale2 forKey:@"scale2"];
 
     
     [KEYWINDOW addSubview:self.contentView];
