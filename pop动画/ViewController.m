@@ -11,6 +11,9 @@
 #define kScreenWidht [UIScreen mainScreen].bounds.size.width
 
 @interface ViewController (){
+    UIView *_view1;
+    UIView *_view2;
+
 }
 @property (nonatomic,strong)UIButton *button;
 @end
@@ -20,12 +23,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+    //1弹窗
     _button= [UIButton buttonWithType:UIButtonTypeCustom];
     [_button setBackgroundImage:[UIImage imageNamed:@"11"] forState:UIControlStateNormal];
     _button.frame = CGRectMake(100, 400, 40, 40);
     [_button addTarget:self action:@selector(xx) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button];
+    
+    
+    //2 uiview自带的转场动画
+    UIButton *bu = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    bu.frame = CGRectMake(200, 400, 40, 40);
+    [self.view addSubview:bu];
+    [bu addTarget:self action:@selector(xxxxxxx) forControlEvents:UIControlEventTouchUpInside];
+
+    UIView *bav = [[UIView alloc]initWithFrame:CGRectMake(20, 100, 200, 260)];
+    bav.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:bav];
+    
+    _view1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 260)];
+    _view1.backgroundColor = [UIColor orangeColor];
+    _view2 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 260)];
+    _view2.backgroundColor = [UIColor redColor];
+    [bav addSubview:_view2];
+    [bav addSubview:_view1];
 }
 - (void)xx
 {
@@ -50,6 +71,14 @@
     }];
     
 
+}
+- (void)xxxxxxx
+{
+    [UIView transitionFromView:_view1 toView:_view2 duration:1 options:UIViewAnimationOptionTransitionFlipFromTop completion:^(BOOL finished) {
+        [UIView transitionFromView:_view2 toView:_view1 duration:1 options:UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL finished) {
+            
+        }];
+    }];
 }
 - (void)dismisssss
 {
