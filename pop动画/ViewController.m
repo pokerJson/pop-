@@ -10,8 +10,9 @@
 #import "DYY_AlertTool.h"
 #define kScreenWidht [UIScreen mainScreen].bounds.size.width
 
-@interface ViewController ()
-
+@interface ViewController (){
+}
+@property (nonatomic,strong)UIButton *button;
 @end
 
 @implementation ViewController
@@ -20,23 +21,33 @@
     [super viewDidLoad];
 
     
-    UIButton *bu = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    bu.frame = CGRectMake(100, 400, 30, 40);
-    [bu addTarget:self action:@selector(xx) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:bu];
+    _button= [UIButton buttonWithType:UIButtonTypeCustom];
+    [_button setBackgroundImage:[UIImage imageNamed:@"11"] forState:UIControlStateNormal];
+    _button.frame = CGRectMake(100, 400, 40, 40);
+    [_button addTarget:self action:@selector(xx) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_button];
 }
 - (void)xx
 {
-    UIView *viviv = [[UIView alloc]initWithFrame:CGRectMake((kScreenWidht-260)/2, 0, 260, 300)];
-    viviv.layer.cornerRadius = 10;
-    viviv.layer.masksToBounds = YES;
-    viviv.backgroundColor = [UIColor orangeColor];
-    UIButton *bu = [UIButton buttonWithType:UIButtonTypeCustom];
-    bu.frame = CGRectMake(0, 100, 200, 40);
-    [bu setTitle:@"dissmiss" forState:UIControlStateNormal];
-    [bu addTarget:self action:@selector(dismisssss) forControlEvents:UIControlEventTouchUpInside];
-    [viviv addSubview:bu];
-    [[DYY_AlertTool shared] show:viviv withType:DYYAlertStyleFromBottom];
+    [UIView transitionWithView:_button duration:1 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+        [self.button setBackgroundImage:[UIImage imageNamed:@"22"] forState:UIControlStateNormal];
+    } completion:^(BOOL finished) {
+        [UIView transitionWithView:self.button duration:1 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+            [self.button setBackgroundImage:[UIImage imageNamed:@"11"] forState:UIControlStateNormal];
+        } completion:^(BOOL finished) {
+            UIView *viviv = [[UIView alloc]initWithFrame:CGRectMake((kScreenWidht-260)/2, 0, 260, 300)];
+            viviv.layer.cornerRadius = 10;
+            viviv.layer.masksToBounds = YES;
+            viviv.backgroundColor = [UIColor orangeColor];
+            UIButton *bu = [UIButton buttonWithType:UIButtonTypeCustom];
+            bu.frame = CGRectMake(0, 100, 200, 40);
+            [bu setTitle:@"dissmiss" forState:UIControlStateNormal];
+            [bu addTarget:self action:@selector(dismisssss) forControlEvents:UIControlEventTouchUpInside];
+            [viviv addSubview:bu];
+            [[DYY_AlertTool shared] show:viviv withType:DYYAlertStyleFromBottom];
+        }];
+        
+    }];
     
 
 }

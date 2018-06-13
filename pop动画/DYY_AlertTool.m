@@ -135,7 +135,6 @@
     [self.contentView.layer pop_addAnimation:leftSprong2 forKey:@"lefta2"];
 
     
-    
     [KEYWINDOW addSubview:self.contentView];
 
 }
