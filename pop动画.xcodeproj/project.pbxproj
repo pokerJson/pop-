@@ -15,6 +15,11 @@
 		2813B8A920CE6E090027667B /* DYY_AlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2813B8A820CE6E090027667B /* DYY_AlertTool.m */; };
 		2848817120D107A40075884F /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 2848817020D107A40075884F /* 11.png */; };
 		2848817320D107B60075884F /* 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 2848817220D107B60075884F /* 22.png */; };
+		2848817B20D38CD90075884F /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2848817620D38CD80075884F /* camera@2x.png */; };
+		2848817C20D38CD90075884F /* music@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2848817720D38CD80075884F /* music@2x.png */; };
+		2848817D20D38CD90075884F /* sleep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2848817820D38CD80075884F /* sleep@2x.png */; };
+		2848817E20D38CD90075884F /* thought@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2848817920D38CD80075884F /* thought@2x.png */; };
+		2848817F20D38CD90075884F /* plcae@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2848817A20D38CD80075884F /* plcae@2x.png */; };
 		A6D3F779FDC40637EC99F46D /* libPods-pop动画.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA08FA07865ED6E1CEBA2875 /* libPods-pop动画.a */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +37,11 @@
 		2813B8A820CE6E090027667B /* DYY_AlertTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYY_AlertTool.m; sourceTree = "<group>"; };
 		2848817020D107A40075884F /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
 		2848817220D107B60075884F /* 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22.png; sourceTree = "<group>"; };
+		2848817620D38CD80075884F /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		2848817720D38CD80075884F /* music@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music@2x.png"; sourceTree = "<group>"; };
+		2848817820D38CD80075884F /* sleep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sleep@2x.png"; sourceTree = "<group>"; };
+		2848817920D38CD80075884F /* thought@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thought@2x.png"; sourceTree = "<group>"; };
+		2848817A20D38CD80075884F /* plcae@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plcae@2x.png"; sourceTree = "<group>"; };
 		BA08FA07865ED6E1CEBA2875 /* libPods-pop动画.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pop动画.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08C8AD690DBAE90BF9E69C1 /* Pods-pop动画.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pop动画.release.xcconfig"; path = "Pods/Target Support Files/Pods-pop动画/Pods-pop动画.release.xcconfig"; sourceTree = "<group>"; };
 		D91DC2692AF93ABD7EF2ACAA /* Pods-pop动画.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pop动画.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pop动画/Pods-pop动画.debug.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +82,11 @@
 			children = (
 				2848817020D107A40075884F /* 11.png */,
 				2848817220D107B60075884F /* 22.png */,
+				2848817620D38CD80075884F /* camera@2x.png */,
+				2848817720D38CD80075884F /* music@2x.png */,
+				2848817A20D38CD80075884F /* plcae@2x.png */,
+				2848817820D38CD80075884F /* sleep@2x.png */,
+				2848817920D38CD80075884F /* thought@2x.png */,
 				2813B89120CE6CB10027667B /* AppDelegate.h */,
 				2813B89220CE6CB10027667B /* AppDelegate.m */,
 				2813B89420CE6CB10027667B /* ViewController.h */,
@@ -162,9 +177,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2813B89E20CE6CB30027667B /* LaunchScreen.storyboard in Resources */,
+				2848817E20D38CD90075884F /* thought@2x.png in Resources */,
 				2848817320D107B60075884F /* 22.png in Resources */,
+				2848817F20D38CD90075884F /* plcae@2x.png in Resources */,
 				2848817120D107A40075884F /* 11.png in Resources */,
 				2813B89B20CE6CB30027667B /* Assets.xcassets in Resources */,
+				2848817C20D38CD90075884F /* music@2x.png in Resources */,
+				2848817D20D38CD90075884F /* sleep@2x.png in Resources */,
+				2848817B20D38CD90075884F /* camera@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
