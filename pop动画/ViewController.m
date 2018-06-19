@@ -133,7 +133,14 @@
     NSLog(@"but.tag==%ld",(long)but.tag);
     for (int i = 0; i<_buttonARRR.count; i++) {
         UIButton *button = _buttonARRR[_buttonARRR.count-1-i];//从最底下那个开始
-                
+        
+        POPBasicAnimation *rotaion = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation];
+        rotaion.toValue = @(M_PI*2);
+        rotaion.beginTime = CACurrentMediaTime() + 0.1*i;//延迟   //注释和不注释效果不一样
+        rotaion.repeatCount = 1;
+        NSString *key4 = [NSString stringWithFormat:@"rotaion%d",i];
+        [button.layer pop_addAnimation:rotaion forKey:key4];
+
         POPBasicAnimation *opp = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerSize];
         opp.fromValue = [NSValue valueWithCGSize:CGSizeMake(30, 30)];
         opp.toValue = [NSValue valueWithCGSize:CGSizeMake(0, 0)];
