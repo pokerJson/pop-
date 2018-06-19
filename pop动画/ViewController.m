@@ -133,7 +133,7 @@
     NSLog(@"but.tag==%ld",(long)but.tag);
     for (int i = 0; i<_buttonARRR.count; i++) {
         UIButton *button = _buttonARRR[_buttonARRR.count-1-i];//从最底下那个开始
-        
+        //旋转
         POPBasicAnimation *rotaion = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation];
         rotaion.toValue = @(M_PI*2);
         rotaion.beginTime = CACurrentMediaTime() + 0.1*i;//延迟   //注释和不注释效果不一样
@@ -141,6 +141,7 @@
         NSString *key4 = [NSString stringWithFormat:@"rotaion%d",i];
         [button.layer pop_addAnimation:rotaion forKey:key4];
 
+        //大小
         POPBasicAnimation *opp = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerSize];
         opp.fromValue = [NSValue valueWithCGSize:CGSizeMake(30, 30)];
         opp.toValue = [NSValue valueWithCGSize:CGSizeMake(0, 0)];
@@ -148,6 +149,7 @@
         NSString *key = [NSString stringWithFormat:@"kPOPLayerScaleXY%d",i];
         [button.layer pop_addAnimation:opp forKey:key];
         
+        //位移
         POPBasicAnimation *opp1 = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
         opp1.toValue = @500;//起始位置
         opp1.fromValue = @(500-i*40);
@@ -155,6 +157,7 @@
         NSString *key2 = [NSString stringWithFormat:@"kPOPLayerPositionY%d",i];
         [button.layer pop_addAnimation:opp1 forKey:key2];
         
+        //隐藏
         POPBasicAnimation *ooo = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
         ooo.fromValue = @1;
         ooo.toValue = @0;
@@ -171,6 +174,16 @@
 {
     for (int i = 0; i<_buttonARRR.count; i++) {
         UIButton *button = _buttonARRR[i];
+        
+        //旋转
+        POPBasicAnimation *rotaion = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation];
+        rotaion.toValue = @(M_PI*2);
+        rotaion.beginTime = CACurrentMediaTime() + 0.1*i;//延迟
+        rotaion.repeatCount = 1;
+        NSString *key4 = [NSString stringWithFormat:@"rotaion%d",i];
+        [button.layer pop_addAnimation:rotaion forKey:key4];
+
+        //大小
         POPBasicAnimation *opp = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerSize];
         opp.fromValue = [NSValue valueWithCGSize:CGSizeMake(0, 0)];
         opp.toValue = [NSValue valueWithCGSize:CGSizeMake(30, 30)];
@@ -178,6 +191,7 @@
         NSString *key = [NSString stringWithFormat:@"kPOPLayerScaleXY%d",i];
         [button.layer pop_addAnimation:opp forKey:key];
         
+        //位移
         POPBasicAnimation *opp1 = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
         opp1.fromValue = @500;//起始位置
         opp1.toValue = @(500-(_buttonARRR.count-i)*40);
@@ -185,6 +199,7 @@
         NSString *key2 = [NSString stringWithFormat:@"kPOPLayerPositionY%d",i];
         [button.layer pop_addAnimation:opp1 forKey:key2];
         
+        //隐藏
         POPBasicAnimation *ooo = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
         ooo.fromValue = @0;
         ooo.toValue = @1;
